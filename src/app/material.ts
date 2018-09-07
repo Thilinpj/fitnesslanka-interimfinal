@@ -6,6 +6,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
     imports: [
@@ -17,7 +20,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         MatInputModule,
         MatCardModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatGridListModule,
+        MatDialogModule,
+        MatProgressSpinnerModule
     ],
 
     exports: [
@@ -29,7 +35,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         MatInputModule,
         MatCardModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatGridListModule,
+        MatDialogModule,
+        MatProgressSpinnerModule
     ]
 })
 
