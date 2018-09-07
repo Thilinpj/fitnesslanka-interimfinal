@@ -9,21 +9,19 @@ export class DataFetchService {
 
   constructor(private http: HttpClient) { }
 
-  sendLoginRequest(email: String, password: String) {
+  sendLoginRequest(emailInput: String, passwordInput: String) {
     let httpHeaders = new HttpHeaders({
-      'X-Requested-With': 'XMLHttpRequest',
-      'Access-Control-Allow-Origin': 'http://fitness-lanka-laravel.herokuapp.com/api/auth/login',
       'Content-Type': 'application/json'
     });
     let options = {
       headers: httpHeaders
     }
     let body = {
-      email: email,
-      password: password,
-      remember_me: '1'
+      email: emailInput,
+      password: passwordInput
     }
-    return this.http.post('http://fitness-lanka-laravel.herokuapp.com/api/auth/login', body, options);
+    console.log(emailInput);
+    console.log(passwordInput);
+    return this.http.post('http://fitness-lanka-laravel.herokuapp.com/api/login', body, options);
   }
-
 }

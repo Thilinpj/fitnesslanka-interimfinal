@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   email;
   password;
 
-  response: object;
+  response: string;
 
   constructor(private dataFetch: DataFetchService) { }
 
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   onClickLogin() {
     this.dataFetch.sendLoginRequest(this.email, this.password).subscribe(
-      data => this.response = data 
+      data => {console.log(data['success']['token']);}
     );
   }
 
