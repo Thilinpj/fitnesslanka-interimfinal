@@ -1,3 +1,4 @@
+<!-- Indeterminate dialog -->
 <div mat-dialog-content *ngIf="type==0">
   <mat-grid-list cols="3">
     <mat-grid-tile>
@@ -7,4 +8,27 @@
       <h3>{{title}}</h3>
     </mat-grid-tile>
   </mat-grid-list>
+</div>
+
+<!-- Message dialog -->
+<div *ngIf="type==1">
+  <h2 mat-dialog-title>{{title}}</h2>
+  <div mat-dialog-content>
+    <p>{{message}}</p>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button [mat-dialog-close] (click)="onNegativeButtonClick()" color="primary">{{negativeButton}}</button>
+    <button mat-raised-button [mat-dialog-close] (click)="onPositiveButtonClick()" color="primary">{{positiveButton}}</button>
+  </div>
+</div>
+
+<!-- Error dialog -->
+<div *ngIf="type==2">
+  <h2 mat-dialog-title>{{title}}</h2>
+  <div mat-dialog-content>
+    <p>{{message}}</p>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button [mat-dialog-close] (click)="onNegativeButtonClick()" color="primary">{{negativeButton}}</button>
+  </div>
 </div>

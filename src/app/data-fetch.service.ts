@@ -1,27 +1,53 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { HttpHeaders } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class DataFetchService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   sendLoginRequest(emailInput: String, passwordInput: String) {
     let httpHeaders = new HttpHeaders({
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     });
     let options = {
       headers: httpHeaders
-    }
+    };
     let body = {
       email: emailInput,
       password: passwordInput
-    }
-    console.log(emailInput);
-    console.log(passwordInput);
-    return this.http.post('http://fitness-lanka-laravel.herokuapp.com/api/login', body, options);
+    };
+    return this.http.post(
+      "http://fitness-lanka-laravel.herokuapp.com/api/login",
+      body,
+      options
+    );
+  }
+
+  sendRegisterRequest(
+    usernameInput: string,
+    emailInput: String,
+    passwordInput: String,
+    confirm_passwordInput: string
+  ) {
+    let httpHeaders = new HttpHeaders({
+      "Content-Type": "application/json"
+    });
+    let options = {
+      headers: httpHeaders
+    };
+    let body = {
+      name: usernameInput,
+      email: emailInput,
+      password: passwordInput,
+      confirm_password: confirm_passwordInput
+    };
+    return this.http.post(
+      "http://fitness-lanka-laravel.herokuapp.com/api/register",
+      body,
+      options
+    );
   }
 }

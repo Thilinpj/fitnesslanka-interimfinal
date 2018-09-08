@@ -11,6 +11,7 @@ import { RegisterComponent } from "./register/register.component";
 
 import { HttpClientModule } from "@angular/common/http";
 import { DialogBuilderComponent } from './dialog-builder/dialog-builder.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DialogBuilderComponent } from './dialog-builder/dialog-builder.componen
     ActionBarComponent,
     LoginComponent,
     RegisterComponent,
-    DialogBuilderComponent
+    DialogBuilderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
