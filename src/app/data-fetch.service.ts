@@ -20,7 +20,7 @@ export class DataFetchService {
       password: passwordInput
     };
     return this.http.post(
-      "http://fitness-lanka-laravel.herokuapp.com/api/login",
+      "http://localhost:8000/api/login",
       body,
       options
     );
@@ -45,7 +45,7 @@ export class DataFetchService {
       confirm_password: confirm_passwordInput
     };
     return this.http.post(
-      "http://fitness-lanka-laravel.herokuapp.com/api/register",
+      "http://localhost:8000/api/register",
       body,
       options
     );
